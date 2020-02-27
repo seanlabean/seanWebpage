@@ -1,8 +1,8 @@
 ---
 layout: about
 permalink: /
-title: <strong>UNDER CONSTRUCTION</strong>
-description: <a href="https://drexel.edu/">Drexel University</a>. <a href="https://www.calpoly.edu/">Cal Poly SLO</a>. Physicist. Climber. Figuring out the rest out.
+title: <strong>UNDER CONSTRUCTION</strong> \\ Sean C. Lewis
+description: <a href="https://drexel.edu/">Drexel University</a>. <a href="https://www.calpoly.edu/">Cal Poly SLO</a>. Physicist. Climber. Still figuring out the rest.
 
 profile:
   align: right
