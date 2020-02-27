@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /publications/
+permalink: /publications/:path/
 title: publications
 description: My academic contributions: papers, posters, talks, acheivements.
 years: [2018]
