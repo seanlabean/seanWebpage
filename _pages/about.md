@@ -2,19 +2,20 @@
 layout: about
 permalink: /
 title: <strong>UNDER CONSTRUCTION</strong>
-description: <a href="">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: <a href="https://drexel.edu/">Drexel University</a>. <a href="https://www.calpoly.edu/">Cal Poly SLO</a>. Physicist. Climber. Figuring out the rest out.
 
 profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Doctoral Candidate</p>
+    <p>Department of Physics</p>
+    <p>Drexel University</p>
 
 news: true
 social: true
 ---
+Currently, I am a physics graduate student at Drexel University in Philadelphia. I design simulations to study the birth of stars. Specifically, I ultilze the Dutch national supercomputer [Cartesius](https://userinfo.surfsara.nl/systems/cartesius) and the software suite Torch (Wall et al. 2019) to determine how stellar radiation, winds, and supernovae affect subsequent star formation.
 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
