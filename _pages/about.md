@@ -8,10 +8,10 @@ profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>Doctoral Candidate</p>
-    <p>Department of Physics</p>
-    <p>Drexel University</p>
-
+    <p> 902 Disque Hall</p>
+    <p>32 S. 32nd Street</p>
+    <p>Philadelphia, PA 19104</p>
+    <p>sean.christian.lewis@drexel.edu</p>
 news: true
 social: true
 ---
