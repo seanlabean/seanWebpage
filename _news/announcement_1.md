@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2020-02-22 15:59:00-0400
+date: 2020-03-03 21:59:00-0400
 inline: true
 ---
 
-Test news.
+Paint Your Theis event! - Stay tuned for results.
