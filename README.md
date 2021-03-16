@@ -9,3 +9,8 @@ As a challenge to myself, I wanted to create and maintain my personal webspace p
 ## Other
 
 Currently a work in progress...
+
+## Compiling and Publishing
+
+On my machine, after making edits to website dependencies I need to compile using the blog-aware site generator jekyll (written in ruby): `bundle exec jekyll build`
+Then, send the compiled site to the hosting server, in this case: Drexel University Physics Department's server. `scp -r {my_local_website_dir}/_site/* {cluster_username}@{cluster_url}:~{cluster_username}/public_html`
