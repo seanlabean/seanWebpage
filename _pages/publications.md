@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /publications/
-title: publications
+permalink: /Professional/
+title: professional
 description: My academic contributions papers, posters, talks, acheivements.
 years: [2021, 2020, 2019, 2018]
 ---
