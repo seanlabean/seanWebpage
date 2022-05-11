@@ -1,7 +1,7 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
+title: projects+talks
+permalink: /projects+talks/
 description: Current projects, academic or otherwise.
 ---
 
