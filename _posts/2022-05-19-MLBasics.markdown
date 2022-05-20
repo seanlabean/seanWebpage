@@ -1,0 +1,41 @@
+---
+layout: post
+title: Deep Learning From First Principles
+date: 2022-05-19 00:00:00
+description: Deep Learning, one step at a time
+---
+
+## Goal and Purpose
+
+Linear regression is the simplest and arguably most well-known form of machine learning.
+
+Linear regression models, as in statistics, are concerned with minimizing error and making the most accurate predictions possible. A neural network can accomplish this by iteratively updating its internal parameters (weights) via a gradient descent algorithm. The Youtube educator 3B1B has a [great visualization](https://www.youtube.com/watch?v=IHZwWFHWa-w) of gradient descent in the context of machine learning models.
+
+In this notebook, I will develop a simple single-layer model to "learn" how to predict the outcome of a linear function of the form y=mx+b. This excersize may seem trivial or unecessary ("I can produce a list of solutions for a linear function and plot it with a few lines of code, why do I need a neural network to try and learn how to do the same thing?") but this will act as a backbone to build more complex neural networks for much **much** more complicated functions.
+
+A neural network can be thought of as a function: input, transformation, and output. Therefore, in its most simple representation, a neural network can take a single input, produce an output, and by comparing that output with the known result, can update its internals to better approach the correct output value.
+
+<p align="center">
+  <img src="/~slewis/assets/blog/simplest_NN.png" alt="Simplest neural newtwork"/>
+</p>
+
+Here, x is some input number, the input is transformed via our neural network function which has parameters W and b (weight and bias). These parameters are subject to change based on how erroneous the network's output $\hat{y}$ is compared to the actual value we'd expect from input x.
+
+The simple neural network has the following steps:
+1. Initialize training input `x_train` and output `y_train`. The output here is the expected correct answer.
+2. Initialize network parameters `W` and `b` . Here the weight array must correspond to the number of inputs. Since we only feed in one input at a time for now, the weights and bias arrays will have shape (1,1). The weight is initialized to a small random number.
+3. Define our `cost` function. The "cost" can be thought of as the error between the expected output and our network's output. "Cost" and "Loss" are similar, though I believe the Loss function is the averaged error when considering a multitude of simultaneous inputs. We'll showcase this later, for now, each error calculation is refered to as the cost.
+4. Calculate the components of the gradient of the `cost` function. In this case: $\frac{\delta W}{\delta C}$ and $\frac{\delta b}{\delta C}$
+5. Update the network parameters by reducing by a scaled amount of the gradient components. This is *gradient descent*. 
+6. Repeat this process any number of times, called *epochs*. Return the parameters `W` and `b`. 
+7. Use the model's updated parameters on *test data* to determine how accurate the trained model is.
+
+<p align="center">
+  <img src="/~slewis/assets/blog/simplest_NN_code.png" alt="Simplest neural newtwork code"/>
+</p>
+
+<p align="center">
+  <img src="/~slewis/assets/blog/simplest_NN_output.png" alt="Simplest neural newtwork output"/>
+</p>
+
+Wonderful! By just feeding our neural network the same number over and over again (5 times in total), we were able to train the network to respond to any *other* number to within ~1% error.

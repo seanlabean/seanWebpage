@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deep Learning from First Principles
+title: Learning about Deep Learning
 date: 2022-05-11 00:00:00
 description: Galaxy identification using ML/DL fundamentals
 ---
@@ -8,6 +8,9 @@ description: Galaxy identification using ML/DL fundamentals
 ### The Goal
 We will build a novel pipeline for galaxy identification using machine learning methods.
 We will create a deep learning neural network from first principles with modular hidden features, allowing for rapid experimentation and optimization of image recognition techniques.
+
+#### Week 3 05.19.22
+
 
 #### Week 2 05.15.22
 Decided to stick with python3 for now. More efficient ot learn the basics in a language I know rather than trying to learn a new-ish language at the same time. Will be using `numpy` and perhaps some image loading packages but that's it for now.
