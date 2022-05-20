@@ -6,6 +6,7 @@ uploads
 .ruby-version
 Gemfile.lock
 assets
-!assets/blog
+!/assets/blog/
+!/assets/blog/*
 *.pdf
 
