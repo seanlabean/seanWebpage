@@ -13,6 +13,7 @@ Linear regression models, as in statistics, are concerned with minimizing error 
 
 In this notebook, I will develop a simple single-layer model to "learn" how to predict the outcome of a linear function of the form y=mx+b. This excersize may seem trivial or unecessary ("I can produce a list of solutions for a linear function and plot it with a few lines of code, why do I need a neural network to try and learn how to do the same thing?") but this will act as a backbone to build more complex neural networks for much **much** more complicated functions.
 
+### The Simplest Neural Network
 A neural network can be thought of as a function: input, transformation, and output. Therefore, in its most simple representation, a neural network can take a single input, produce an output, and by comparing that output with the known result, can update its internals to better approach the correct output value.
 
 <p align="center">
@@ -35,7 +36,15 @@ The simple neural network has the following steps:
 </p>
 
 <p align="center">
-  <img src="/~slewis/assets/blog/simplest_NN_output.png" alt="Simplest neural newtwork output"/>
+  <img src="/~slewis/assets/blog/simplest_NN_output.png" alt="Simplest neural newtwork output"
+  width="400"
+  height="175" />
 </p>
 
 Wonderful! By just feeding our neural network the same number over and over again (5 times in total), we were able to train the network to respond to any *other* number to within ~1% error.
+
+In Neural Network models, we refer to the weights and biases of the model as the model's *parameters*. These are elements that change throughout the model's learning process but that we do not necessarily have direct control over. Number of learning iterations (epochs) and the learning rate (which scales by how much parameters W and b are changed) are examples of *hyperparameters*. We typically DO have direct control over hyperparameters. Below, we can see the effect of a decreased learning rate and increasing epoch number. Typically, we'd expect more epoch iterations to lend to less model error since it gives more iterations to improve the model parameters. But this can also have a detrimental effect as the model becomes "over-trained". The learning rate can also be over-tuned, if the learning rate is too large, the model will bounce around it's cost/loss minimum without ever "descending the gradient". If the learning rate is too small, the model will learn very accurately but very slowly, requiring many more epoch iterations to get equivalent results to larger learning rates. As can be seen in the figure below, more epochs can sometimes cause a model's error to rise while smaller learning rates take more epochs to improve. 
+
+<p align="center">
+  <img src="/~slewis/assets/blog/simplest_NN_epochs_vs_error.png" alt="Simplest neural newtwork"/>
+</p>
