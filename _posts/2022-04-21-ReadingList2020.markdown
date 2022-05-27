@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reading List - 2020
+title: Book Reviews - 2020
 date: 2022-04-21 00:00:00
 description: From 2020 - What did I read? What did I like?
 ---
