@@ -84,5 +84,3 @@ The behavior of our models parameters under the shift of the learning rate and e
 Though we still see similar macro-trends in our new and improved model: it's still possible to over-train the model, and too low of a learning rate can increase the learning iterations needed, thereby requiring undue computational requirements.
 
 Next, we'll expand on our neural network once more, this time adding so-called "hidden layers" to the network which will further improve the model's learning capabilities.
-
-### Layers Upon Layers
