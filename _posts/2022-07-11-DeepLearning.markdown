@@ -14,6 +14,7 @@ Expanding each layer into any number of neurons allows for multi-dimensional lin
   <img src="/~slewis/assets/blog/deeplearning_NN.png" alt="Deep learning neural newtwork code"/>
 </p>
 
+### Coding in the Deep
 The code behind coupling high-dimensional neural network layers is surprisingly simple. At its core, transforming activations to a new layer is a linear matrix transformation, one that can be performed quickly and in a single line of code using `numpy`. The N-dimensional layer can also be built easily with native `numpy` routines. The most difficult part of this process is the bookkeeping: keeping track of each neuron's weight, bias, and activation as well as the corresponding gradient descent information for the backpropogation step. As a neural network expands, the size of the book to be kept becomes enourmous. Luckily, it's straightforward to build a dictionary to maintain the activation and gradient descent data and ensure that it loops over and includes all data reguardless of any number of layers or number of neurons within individual layers.
 
 
@@ -84,7 +85,8 @@ def L_layer_model(X, Y, layer_dims, learning_rate=0.05, num_iterations=10, print
 Clearly (or perhaps not), the fundamental steps here are identical to our previous model: [[Backpropagation]].
 1. Forward propogation
 2. Caclulate Cost
-3. 
+3. Backwards propogation
+4. update parameters
 ```
 def init_parameters(layers_dims):
     parameters = {}
