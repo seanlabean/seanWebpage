@@ -14,7 +14,7 @@ Expanding each layer into any number of neurons allows for multi-dimensional lin
   <img src="/~slewis/assets/blog/deeplearning_NN.png" alt="Deep learning neural newtwork code"/>
 </p>
 
-### Coding in the Deep
+## Coding in the Deep
 The code behind coupling high-dimensional neural network layers is surprisingly simple. At its core, transforming activations to a new layer is a linear matrix transformation, one that can be performed quickly and in a single line of code using `numpy`. The N-dimensional layer can also be built easily with native `numpy` routines. The most difficult part of this process is the bookkeeping: keeping track of each neuron's weight, bias, and activation as well as the corresponding gradient descent information for the backpropogation step. As a neural network expands, the size of the book to be kept becomes enourmous. Luckily, it's straightforward to build a dictionary to maintain the activation and gradient descent data and ensure that it loops over and includes all data reguardless of any number of layers or number of neurons within individual layers.
 
 
@@ -58,7 +58,6 @@ def L_layer_model(X, Y, layer_dims, learning_rate=0.05, num_iterations=10, print
         
         # Lth layer (Sigmoid --> Linear) gradients
         current_cache = caches[L-1]
-        #print(dAL, current_cache)
         dA_prev_temp, dW_temp, db_temp = linear_activation_backward(dAL, current_cache, "none") # usually relu
         grads["dA" + str(L-1)] = dA_prev_temp
         grads["dW" + str(L)] = dW_temp
@@ -82,11 +81,17 @@ def L_layer_model(X, Y, layer_dims, learning_rate=0.05, num_iterations=10, print
             parameters["b" + str(l + 1)] = parameters["b" + str(l + 1)] - learning_rate * grads["db" + str(l + 1)]
     return parameters, costs
 ```
+
 Clearly (or perhaps not), the fundamental steps here are identical to our previous model: [[Backpropagation]].
-1. Forward propogation
-2. Caclulate Cost
-3. Backwards propogation
-4. update parameters
+1. Forward propogation - calculate the activation and parameters for each neuron.
+2. Caclulate Cost - based on output neuron layer.
+3. Backwards propogation - calculating gradient for each neuron and parameter set.
+4. update parameters - take a step in the gradient descent of the model.
+
+The significant difference in this iteration of our model is two fold. Firstly, we can treat some neuron layers slightly differently than others. This can be seen in the 3rd parameter of the `linear_activation_forward()` and `linear_activation_backward()` functions which takes in a string indicating the type of activation function that we want applied to the neuron activation in the layer. We'll touch on activation functions again soon, but for now our only concern is that unique activation functions require unique forward propogation and backwards gradient calculations. The second major change is how I treat the last layer (index L-1) uniquely and note that usually the activation function here is typically a ReLU. Meanwhile, I treat all other layers (indices 0 to L-2) as having a different activation function, typically a sigmoid, and loop over all of the layers in a single for loop.
+
+Below, notince how I have separate conditionals for the. types of activation functions any neuron layer may be receiving.
+
 ```
 def init_parameters(layers_dims):
     parameters = {}
